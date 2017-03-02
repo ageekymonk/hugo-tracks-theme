@@ -1,0 +1,44 @@
+{{ define "main" }}
+
+<div class="col-md-12 entry">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="entry-meta">
+        {{ .Date.Format "January 06" }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="entry-header">
+       {{ .Title }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="entry-sidebar">
+        CATEGORIES
+        <div class="entry-categories">
+          <a href="">Design</a>
+        </div>
+
+        Tags
+        <div class="entry-tags">
+          <a href="">memories</a>
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="entry-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+  {{ template "_internal/disqus.html" . }}
+
+</div>
+{{ end }}
