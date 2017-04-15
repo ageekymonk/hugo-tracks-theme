@@ -19,15 +19,19 @@
     <div class="col-md-2">
       <div class="entry-sidebar">
         CATEGORIES
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
         <div class="entry-categories">
-          <a href="">Design</a>
+          <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
         </div>
+        {{ end }}
 
         Tags
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
         <div class="entry-tags">
-          <a href="">memories</a>
-          
+          <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
         </div>
+        {{ end }}
+
       </div>
     </div>
     <div class="col-md-10">
