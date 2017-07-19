@@ -6306,6 +6306,7 @@ body, input, select, button {
     font-size: 0.813em;
     letter-spacing: 0.08em;
     line-height: 1.85em;
+    text-decoration: none;
     margin-right: 0.75em;
     display: inline-block; }
 
@@ -6315,14 +6316,15 @@ body, input, select, button {
   background-color: #fff;
   color: #4d4d4d;
   opacity: 0.8;
-  height: inherit; }
-  .content-excerpt:hover {
-    opacity: 1; }
+  height: inherit;
+  padding: 1.5em 2em;
+  z-index: 5;
+  transition: opacity 0.1s ease; }
 
 .content-column {
   background-color: #fff;
   color: #4d4d4d;
-  opactiy: 0.8;
+  opacity: 0.8;
   word-wrap: break-word; }
 
 .content-column-content {
@@ -6369,19 +6371,28 @@ body, input, select, button {
 
 .content-image {
   margin-bottom: 2.5em;
-  right: -1px;
+  right: 0px;
   height: 100%;
+  width: 50%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-position: 50%;
-  background-size: cover; }
-  .content-image:hover, .content-image:active, .content-image:focus {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-    -moz-transform: scale(1.05) rotate(0.02deg); }
+  background-size: cover;
+  z-index: 1;
+  transition: all 0.1s ease; }
 
 .content-date {
   padding-top: 3.7em; }
+
+.content {
+  overflow: hidden;
+  margin-bottom: 1.5em; }
+  .content:hover .content-excerpt, .content:active .content-excerpt, .content:focus .content-excerpt {
+    opacity: 1; }
+  .content:hover .content-image, .content:active .content-image, .content:focus .content-image {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -moz-transform: scale(1.05) rotate(0.02deg); }
 
 .entry {
   background: #fff;
@@ -6439,6 +6450,45 @@ body, input, select, button {
 .footer-title, .footer-menu {
   text-align: center; }
 
+@media only screen and (max-width: 768px) {
+  .content-title:after {
+    height: 0.2em; }
+  .main-content {
+    padding: 0; }
+    .main-content .row {
+      margin-left: 0;
+      margin-right: 0; }
+  .social-media-block-footer {
+    text-align: center;
+    margin-top: 0.8em; }
+  .content-summary p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: calc(1.7rem * 6);
+    font-size: 1.7rem; }
+  .content-date {
+    padding-top: 0; }
+  .entry-header {
+    font-size: 2em; }
+  .entry-meta {
+    margin-top: 1em; }
+  .entry-sidebar {
+    color: #4d4d4d;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 1em; }
+    .entry-sidebar .entry-sidebar-title {
+      margin-top: 0.7em; }
+    .entry-sidebar .entry-categories, .entry-sidebar .entry-tags {
+      color: #8c8c8c;
+      text-transform: none;
+      margin-bottom: 0;
+      display: inline-block;
+      padding: 0 0.3em; } }
+
 @media (min-width: 768px) {
   .top-navigation {
     position: relative;
@@ -6460,4 +6510,14 @@ body, input, select, button {
   .menu {
     float: right; }
   .content {
-    height: 384px; } }
+    height: 384px; }
+  .content:nth-child(2n+0) .content-image {
+    float: right; } }
+
+@media only screen and (max-width: 425px) {
+  .content .content-image {
+    width: 100%;
+    height: 25vh;
+    margin-bottom: 0; }
+  .content .content-excerpt {
+    margin-bottom: 0; } }
