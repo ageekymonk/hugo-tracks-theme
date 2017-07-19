@@ -6306,7 +6306,6 @@ body, input, select, button {
     font-size: 0.813em;
     letter-spacing: 0.08em;
     line-height: 1.85em;
-    text-decoration: none;
     margin-right: 0.75em;
     display: inline-block; }
 
@@ -6390,8 +6389,8 @@ body, input, select, button {
   .content:hover .content-excerpt, .content:active .content-excerpt, .content:focus .content-excerpt {
     opacity: 1; }
   .content:hover .content-image, .content:active .content-image, .content:focus .content-image {
-    -webkit-transform: scale(1.05);
     transform: scale(1.05);
+    -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05) rotate(0.02deg); }
 
 .entry {
