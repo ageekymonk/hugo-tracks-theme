@@ -10,9 +10,9 @@
 <div class="row">
   <div class="col-md-12 footer-menu">
       <a href="/">Home /</a>
-      {{ range $name, $taxonomy := .Site.Sections }}
-      {{ if ne $name "post" }}
-      <a href="/{{ $name | urlize }}">{{ $name }} / </a>
+      {{ range $name, $taxonomy := .Site.Params.Navlinks }}
+      {{ if ne $taxonomy.name "Home" }}
+      <a href="/{{ $taxonomy.url | urlize }}">{{ $taxonomy.name }} / </a>
       {{ end }}
       {{ end }}
 
