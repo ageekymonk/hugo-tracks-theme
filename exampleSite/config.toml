@@ -10,6 +10,7 @@ googleAnalytics = ""
 [params]
   # Use custom.css for your custom styling
   style = "default"
+  pages = false
   description = "Describe your website"
   copyright = "&copy;2016 Your name or company"
   sidebarAbout = [
