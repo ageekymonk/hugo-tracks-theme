@@ -17,6 +17,10 @@
 <link rel="stylesheet" href="{{ "css/font-awesome.min.css" | absURL }}">
 <!-- Theme stylesheet, if possible do not edit this stylesheet -->
 <link href="{{ "css/style.default.css" | absURL }}" rel="stylesheet" id="theme-stylesheet">
+{{ if ne .Site.Params.style "default" }}
+<link href="{{ (printf "css/style.%s.css" .Site.Params.style) | absURL }}" rel="stylesheet" id="theme-stylesheet">
+{{ end }}
+
 <!-- Custom stylesheet - for your changes -->
 <link href="{{ "css/custom.css" | absURL }}" rel="stylesheet">
 <link rel="shortcut icon" href="{{ "img/favicon.png" | absURL }}">
